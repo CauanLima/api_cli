@@ -17,5 +17,9 @@ public record DadosCadastroEndereco(
         String numero,
 
         @NotNull
+        @NotBlank
+        String cidade,
+
+        @NotNull
         Long pessoa_id) {
 }
