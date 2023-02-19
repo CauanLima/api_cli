@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,15 +24,16 @@ public class Pessoa {
     private String nome;
     private Date dataNascimento;
 
-    //@OneToMany(mappedBy = "pessoa")
-    //private List<Endereco> enderecos;
+    @OneToMany(mappedBy = "pessoa")
+    private List<Endereco> enderecos;
 
 
     public Pessoa(DadosCadastroPessoa dados) {
-        //List<Endereco> enderecos2 = new List<Endereco>();
+        List<Endereco> dadosEnderecos = new ArrayList<Endereco>();
+        dados.endereco().forEach((end) -> dadosEnderecos.add(new Endereco(end)));
         this.nome = dados.nome();
         this.dataNascimento = dados.dataNascimento();
-        //this.enderecos = new Endereco(dados.endereco());
+        this.enderecos = dadosEnderecos;
 
     }
 }

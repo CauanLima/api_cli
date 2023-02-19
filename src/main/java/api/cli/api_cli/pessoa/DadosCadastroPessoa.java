@@ -4,6 +4,7 @@ import api.cli.api_cli.endereco.DadosEndereco;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
+import java.util.List;
 
-public record DadosCadastroPessoa(String nome, @JsonFormat(pattern = "dd/mm/yyyy") Date dataNascimento, DadosEndereco endereco) {
+public record DadosCadastroPessoa(String nome, @JsonFormat(pattern = "dd/mm/yyyy") Date dataNascimento, List<DadosEndereco> endereco) {
 }

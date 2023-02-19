@@ -1,5 +1,8 @@
 package api.cli.api_cli.endereco;
-/*
+
+import java.util.List;
+
+
 import api.cli.api_cli.pessoa.Pessoa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,9 +17,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "enderecos")
 @Entity(name = "Endereco")
 
- */
+
 public class Endereco {
-    /*
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,6 +37,6 @@ public class Endereco {
         this.numero = endereco.numero();
     }
 
-     */
+
 
 }
