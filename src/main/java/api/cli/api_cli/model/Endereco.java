@@ -1,8 +1,7 @@
 package api.cli.api_cli.model;
 
 
-import api.cli.api_cli.dto.DadosEndereco;
-import api.cli.api_cli.model.Pessoa;
+import api.cli.api_cli.dto.DadosCadastroEndereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -27,10 +26,12 @@ public class Endereco {
     private Pessoa pessoa;
 
 
-    public Endereco(DadosEndereco end, Pessoa pessoa) {
+    public Endereco(DadosCadastroEndereco end) {
         this.logradouro = end.logradouro();
         this.cep = end.cep();
         this.numero = end.numero();
-        this.pessoa = pessoa;
+        this.pessoa = new Pessoa(end.pessoa_id());
     }
+
+
 }
